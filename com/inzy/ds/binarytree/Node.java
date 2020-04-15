@@ -1,12 +1,12 @@
 package com.inzy.ds.binarytree;
 
-public class BTNode {
+public class Node {
 
-    BTNode left;
-    BTNode right;
+    Node left;
+    Node right;
     int data;
 
-    public BTNode(int data) {
+    public Node(int data) {
         this.data = data;
         left = null;
         right = null;
