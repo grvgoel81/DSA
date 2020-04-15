@@ -4,8 +4,17 @@ package com.inzy.ds.binarytree;
 public class BinaryTree {
     private Node root;
     private Node targetLeaf;
-    private int btHeight = Integer.MIN_VALUE;
-    private int maxSum = Integer.MIN_VALUE;
+    private int btHeight;
+    private int maxSum;
+    private int ind;
+
+    public BinaryTree() {
+        root = null;
+        targetLeaf = null;
+        btHeight = Integer.MIN_VALUE;
+        maxSum = Integer.MIN_VALUE;
+        ind = 0;
+    }
 
     void add(int val) {
         root = addRecursive(val, root);
@@ -51,6 +60,18 @@ public class BinaryTree {
             traverseInOrder(node.left);
             System.out.println(node.data);
             traverseInOrder(node.right);
+        }
+    }
+
+    void traversePreOrder() {
+        traversePreOrder(root);
+    }
+
+    private void traversePreOrder(Node node) {
+        if (node != null) {
+            System.out.println(node.data);
+            traversePreOrder(node.left);
+            traversePreOrder(node.right);
         }
     }
 
@@ -111,5 +132,24 @@ public class BinaryTree {
         }
         getHeight(root, 0);
         return btHeight;
+    }
+
+    private Node make(int[] pre, char[] preLN, int n) {
+        if (n == ind) {
+            return null;
+        }
+        Node node = new Node(pre[ind]);
+        ind++;
+        if (ind >= n)
+            return node;
+        if (preLN[ind - 1] == 'N') {
+            node.left = make(pre, preLN, n);
+            node.right = make(pre, preLN, n);
+        }
+        return node;
+    }
+
+    void constructTree(int n, int[] pre, char[] preLN) {
+        root = make(pre, preLN, n);
     }
 }
