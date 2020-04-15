@@ -1,4 +1,4 @@
-package com.inzy.ds.example;
+package com.inzy.ds.sorting;
 
 public class Sorting {
     public static void main(String args[]) {

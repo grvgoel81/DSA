@@ -1,4 +1,4 @@
-package com.inzy.ds.example;
+package com.inzy.ds.sorting;
 
 public class BubbleSort {
 
@@ -44,15 +44,5 @@ public class BubbleSort {
         int n = arr.length;
         for (int i1 : arr) System.out.print(i1 + " ");
         System.out.println();
-    }
-
-    public static class Utils {
-        public static int[] getRandomArray(int length) {
-            int[] randoms = new int[length];
-            for (int i = 0; i < length; i++) {
-                randoms[i] = (int) (Math.random() * 100);
-            }
-            return randoms;
-        }
     }
 }

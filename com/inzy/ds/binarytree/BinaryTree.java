@@ -21,6 +21,12 @@ public class BinaryTree {
         return node;
     }
 
+    void delete(int val) {
+        if (root == null)
+            return;
+        deleteRecursive(root, val);
+    }
+
     private Node deleteRecursive(Node current, int value) {
         if (current == null)
             return current;
@@ -34,12 +40,6 @@ public class BinaryTree {
             current.right = deleteRecursive(current.right, value);
             return current;
         }
-    }
-
-    void delete(int val) {
-        if (root == null)
-            return;
-        deleteRecursive(root, val);
     }
 
     void traverseInOrder() {
@@ -112,5 +112,4 @@ public class BinaryTree {
         getHeight(root, 0);
         return btHeight;
     }
-
 }

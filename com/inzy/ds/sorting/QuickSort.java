@@ -1,4 +1,4 @@
-package com.inzy.ds.example;
+package com.inzy.ds.sorting;
 
 public class QuickSort {
 
