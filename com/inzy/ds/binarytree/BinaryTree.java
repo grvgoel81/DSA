@@ -152,4 +152,21 @@ public class BinaryTree {
     void constructTree(int n, int[] pre, char[] preLN) {
         root = make(pre, preLN, n);
     }
+
+    void printNodes(Node node, int curr, int k) {
+        if (node == null)
+            return;
+        curr++;
+        if (curr == k) {
+            System.out.print(node.data + " ");
+        }
+        printNodes(node.left, curr, k);
+        printNodes(node.right, curr, k);
+    }
+
+    void printNodesKDistanceFromRoot(int k) {
+        System.out.print("printNodesKDistanceFromRoot: ");
+        printNodes(root, 0, k);
+        System.out.println("");
+    }
 }

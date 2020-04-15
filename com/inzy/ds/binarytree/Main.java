@@ -17,6 +17,7 @@ public class Main {
         binaryTree.traverseInOrder();
         System.out.println("Max Sum: " + binaryTree.maxSum());
         System.out.println("Max Height: " + binaryTree.height());
+        binaryTree.printNodesKDistanceFromRoot(7);
         int[] pre = {10, 30, 20, 5, 15};
         char[] preLN = {'N', 'N', 'L', 'L', 'P'};
         binaryTree.constructTree(5, pre, preLN);
