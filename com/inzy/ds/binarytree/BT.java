@@ -58,6 +58,32 @@ public class BT {
         getMaxSumRec(node.right, currSum);
     }
 
+
+    private void getHeight(BTNode node, int currHeight) {
+        if (node == null) {
+            return;
+        }
+
+        currHeight = currHeight + 1;
+        if (node.left == null && node.right == null) {
+            if (currHeight > btHeight) {
+                btHeight = currHeight;
+            }
+        }
+        getHeight(node.left, currHeight);
+        getHeight(node.right, currHeight);
+    }
+
+    private int btHeight = Integer.MIN_VALUE;
+
+    int height() {
+        if (root == null) {
+            return 0;
+        }
+        getHeight(root, 0);
+        return btHeight;
+    }
+
     int maxSum() {
         if (root == null)
             return 0;
