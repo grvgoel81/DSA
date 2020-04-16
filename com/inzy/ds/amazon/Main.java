@@ -10,5 +10,6 @@ public class Main {
         problems.removeDups(arr, n);
         int product[] = {1, 4, 3, -6, 7, -7};
         System.out.println("Product: " + problems.maxProduct(product, product.length));
+        System.out.println("Highest PowerOf2: " + problems.highestPowerOf2(127));
     }
 }

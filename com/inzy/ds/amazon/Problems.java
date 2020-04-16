@@ -50,4 +50,13 @@ public class Problems {
         }
         return Math.max(min * secMin, max * secMax);
     }
+
+    int highestPowerOf2(int n) {
+        int num = 1;
+        while (num < n) {
+            num = num * 2;
+        }
+        return num == n ? num : num / 2;
+
+    }
 }
