@@ -29,4 +29,25 @@ public class Problems {
             mp.add(arr[i]);
         }
     }
+
+    int maxProduct(int arr[], int n) {
+        int min = Integer.MAX_VALUE;
+        int secMin = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int secMax = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > max) {
+                secMax = max;
+                max = arr[i];
+            } else if (arr[i] > secMax) {
+                secMax = arr[i];
+            } else if (arr[i] < min) {
+                secMin = min;
+                min = arr[i];
+            } else if (arr[i] < secMin) {
+                secMin = arr[i];
+            }
+        }
+        return Math.max(min * secMin, max * secMax);
+    }
 }

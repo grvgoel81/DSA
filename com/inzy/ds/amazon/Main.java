@@ -8,5 +8,7 @@ public class Main {
         int[] arr = {1, 2, 5, 1, 7, 2, 4, 2};
         int n = arr.length;
         problems.removeDups(arr, n);
+        int product[] = {1, 4, 3, -6, 7, -7};
+        System.out.println("Product: " + problems.maxProduct(product, product.length));
     }
 }
