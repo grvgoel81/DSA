@@ -72,6 +72,25 @@ public class Problems {
         printArray(arr, "replaceWithNextGreatest¬");
     }
 
+    int countSubStringStartEndWith1(String str) {
+        int count = 0;
+        boolean start = false;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '1') {
+                start = true;
+            } else {
+                if (start) {
+                    count++;
+                }
+                start = false;
+            }
+        }
+        if (start) {
+            count++;
+        }
+        return count;
+    }
+
     private void printArray(int[] arr, String title) {
         System.out.println(title);
         for (int val : arr) {

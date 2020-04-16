@@ -13,5 +13,6 @@ public class Main {
         System.out.println("Highest PowerOf2: " + problems.highestPowerOf2(127));
         int[] nextGreat = {16, 17, 4, 3, 5, 2};
         problems.replaceWithNextGreatest(nextGreat, nextGreat.length);
+        System.out.println("countSubStringStartEndWith1: " + problems.countSubStringStartEndWith1("001110111111000100101011"));
     }
 }
