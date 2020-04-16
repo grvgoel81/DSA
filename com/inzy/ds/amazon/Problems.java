@@ -59,4 +59,23 @@ public class Problems {
         return num == n ? num : num / 2;
 
     }
+
+    void replaceWithNextGreatest(int[] arr, int len) {
+        int max = arr[len - 1];
+        arr[len - 1] = -1;
+        for (int i = len - 2; i >= 0; i--) {
+            int value = arr[i];
+            arr[i] = max;
+            if (max < value)
+                max = value;
+        }
+        printArray(arr, "replaceWithNextGreatest¬");
+    }
+
+    private void printArray(int[] arr, String title) {
+        System.out.println(title);
+        for (int val : arr) {
+            System.out.print("[" + val + "] ");
+        }
+    }
 }

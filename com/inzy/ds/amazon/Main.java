@@ -8,8 +8,10 @@ public class Main {
         int[] arr = {1, 2, 5, 1, 7, 2, 4, 2};
         int n = arr.length;
         problems.removeDups(arr, n);
-        int product[] = {1, 4, 3, -6, 7, -7};
+        int[] product = {1, 4, 3, -6, 7, -7};
         System.out.println("Product: " + problems.maxProduct(product, product.length));
         System.out.println("Highest PowerOf2: " + problems.highestPowerOf2(127));
+        int[] nextGreat = {16, 17, 4, 3, 5, 2};
+        problems.replaceWithNextGreatest(nextGreat, nextGreat.length);
     }
 }
