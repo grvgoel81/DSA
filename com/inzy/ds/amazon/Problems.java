@@ -1,5 +1,8 @@
 package com.inzy.ds.amazon;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Problems {
     int replace0with5(int num) {
         int output = num;
@@ -16,5 +19,14 @@ public class Problems {
             temp = temp * 10;
         }
         return num;
+    }
+
+    void removeDups(int[] arr, int n) {
+        Set<Integer> mp = new HashSet<>();
+        for (int i = 0; i < n; ++i) {
+            if (!mp.contains(arr[i]))
+                System.out.print(arr[i] + " ");
+            mp.add(arr[i]);
+        }
     }
 }
