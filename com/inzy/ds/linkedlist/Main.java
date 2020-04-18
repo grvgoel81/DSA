@@ -24,7 +24,7 @@ public class Main {
         linkedList1.insertNodeAtFront(21);
         linkedList1.insertNodeAtFront(11);
 
-        UtilityMethod.addIntersection(linkedList1.getHead(), linkedList.getHead());
+//        UtilityMethod.addIntersection(linkedList1.getHead(), linkedList.getHead());
 //        linkedList.insertNodeAtPos(3, 2);
 //        linkedList.deleteNodeByKey(1);
 //        linkedList.print();
@@ -39,6 +39,8 @@ public class Main {
         linkedList1.print();
         linkedList1.segregateEvenOdd();
         linkedList1.print();
+
+        linkedList1.reverseLinkedListInGroup(3);
 //        linkedList.swapNodes(4,7);
 //        linkedList.pairWiseSwap();
 //        linkedList.moveFrontElementToLast();

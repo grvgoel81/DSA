@@ -3,7 +3,7 @@ package com.inzy.ds.amazon;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Problems {
+public class Amazon {
     int replace0with5(int num) {
         int output = num;
         int temp = 1;

@@ -324,6 +324,28 @@ class LinkedList {
         first.next = null;
     }
 
+    void reverseLinkedListInGroup(int num) {
+        head = reverse(head, num);
+        print();
+    }
+
+    private Node reverse(Node node, int num) {
+        Node temp = null;
+        Node prev = null;
+        Node curr = node;
+        int i = 0;
+        while (i < num && curr != null) {
+            temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+            i++;
+        }
+        if (temp != null)
+            node.next = reverse(temp, num);
+        return prev;
+    }
+
     void print() {
         Node temp = head;
         System.out.print("List: ");
