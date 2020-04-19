@@ -58,7 +58,7 @@ public class BinaryTree {
     private void traverseInOrder(Node node) {
         if (node != null) {
             traverseInOrder(node.left);
-            System.out.println(node.data);
+            System.out.print("[" + node.data + "] ");
             traverseInOrder(node.right);
         }
     }
@@ -162,6 +162,23 @@ public class BinaryTree {
         }
         printNodes(node.left, curr, k);
         printNodes(node.right, curr, k);
+    }
+
+    int countBstNodesThatLieInAGivenRange(int l, int h) {
+        if (root == null)
+            return 0;
+        return countNodes(root, l, h);
+    }
+
+
+    private int countNodes(Node node, int m, int n) {
+        if (node == null)
+            return 0;
+        int count = 0;
+        if (node.data >= m && node.data <= n) {
+            count++;
+        }
+        return count + countNodes(node.left, m, n) + countNodes(node.right, m, n);
     }
 
     void printNodesKDistanceFromRoot(int k) {
