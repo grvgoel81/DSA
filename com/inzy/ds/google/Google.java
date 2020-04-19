@@ -4,55 +4,56 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Stack;
 
-public class Google {
+class Google {
 
     void subArrayWithGivenSum(int[] arr, int sum) {
         HashMap<Integer, Integer> hashMap = new HashMap<>();
+        int currSum = 0;
         int j = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (hashMap.containsKey(i - 1)) {
-                int val = hashMap.get(i - 1) + arr[i];
-                if (val == sum) {
-                    System.out.println(j + " : " + i);
-                    return;
-                } else if (val > sum) {
-                    val = val - arr[j];
-                    hashMap.put(i, val);
-                    j++;
-                    if (val == sum) {
-                        System.out.println(j + " : " + i);
-                        return;
-                    }
-                } else {
-                    hashMap.put(i, val);
-                }
+            currSum = currSum + arr[i];
+            if (currSum == sum) {
+                System.out.println(j + " , " + i);
+                return;
+            } else if (currSum < sum) {
+                hashMap.put(i, currSum);
             } else {
-                hashMap.put(i, arr[i]);
-                if (arr[i] == sum) {
-                    System.out.println(j + " : " + i);
+                while (currSum > sum) {
+                    currSum = currSum - arr[j];
+                    j++;
+                }
+                if (currSum == sum) {
+                    System.out.println(j + " , " + i);
                     return;
                 }
             }
         }
     }
 
-    void nextGreaterElement(char[] arr, int len) {
-        int minNum = Integer.MAX_VALUE;
-        int minPos = len;
+    void nextGreaterElementPermutation(char[] arr, int len) {
+
+        int min = Integer.MAX_VALUE;
+        int minPos = len - 1;
         int i;
         for (i = len - 1; i > 0; i--) {
-            if (arr[i] < minNum) {
-                minNum = arr[i];
+            if (arr[i] < min) {
+                min = arr[i];
                 minPos = i;
             }
             if (arr[i - 1] < arr[i]) {
                 break;
             }
         }
+        if (i == 0) {
+            System.out.println("No value found");
+            return;
+        }
+
         arr[minPos] = arr[i - 1];
-        arr[i - 1] = (char) minNum;
+        arr[i - 1] = (char) min;
         Arrays.sort(arr, i, len);
-        printArray(arr, "nextGreaterElement");
+        printArray(arr, "nextGreaterElementPermutation");
+
     }
 
     boolean validParenthesis(String str) {
